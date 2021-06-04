@@ -16,15 +16,12 @@ const FileUpload = () => {
     e.preventDefault();
     console.log(file);
     
-    let formData = new FormData(); 
-    console.log(formData);
-    console.log(form.current);
-
+    let formData = new FormData();
     formData.append('file', file);
 
-    for (var key of formData.entries()) {
-        console.log(key[0] + ', ' + key[1]);
-    }
+    // for (var key of formData.entries()) {
+    //     console.log(key[0] + ', ' + key[1]);
+    // }
     
     axios
       .post("/imageupload", formData, {

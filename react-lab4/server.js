@@ -34,29 +34,13 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-// pree this https://dev.to/nburgess/creating-a-react-app-with-react-router-and-an-express-backend-33l3
-
 app.get("/", (req, res) => res.send("Yo yo yo!"));
 
 app.get("/here", (req, res) => res.send("here too yo!"));
 
 app.post("/imageupload", upload.single('file'), (req, res) => {
   console.log(req.file);
-  // let myupload = upload.single('file');
   res.send("File Uploaded");
-  //   myupload(req, res, function (err) {
-  //     if (req.fileValidationError) {
-  //       return res.send(req.fileValidationError);
-  //     } else if (!req.file) {
-  //       //this coming back idky mi wan cuss
-  //       return res.send("Please select an image to upload");
-  //     } else if (err instanceof multer.MulterError) {
-  //       return res.send(err);
-  //     } else if (err) {
-  //       return res.send(err);
-  //     }
-  //     res.send("File Uploaded");
-  //   });
 });
 
 
